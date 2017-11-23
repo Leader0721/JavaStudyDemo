@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>注册账户</title>
+</head>
+<body>
+<form action="/hello/request04" method="post">
+    用户名:<input type="text" name="username"/><br/>
+    密 码:<input type="password" name="password"/><br/>
+    确认密码:<input type="password" name="password"/><br/>
+    性别:<input type="text" name="gender"/><br/>
+
+    <input type="text" size="3" name="code"/><img id="img1" src="http://localhost:8080/hello/hello0803"/><a
+        href="javascript:change()">看不清</a><br/>
+
+    <input type="submit" value="注册">
+
+</form>
+<script>
+
+    function change() {
+        var imgObj = document.getElementById("img1");
+        //写上地址  然后从新请求一遍  浏览器如果发现地址没有变化，所以没有变化  可以通过在后面添加一个字段进行区分，然后进行取值
+        imgObj.src = "http://localhost:8080/hello/hello0803?time=" + new Date().getTime();
+    }
+</script>
+</body>
+</html>

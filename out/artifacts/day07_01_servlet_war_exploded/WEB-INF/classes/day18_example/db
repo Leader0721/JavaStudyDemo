@@ -1,0 +1,13 @@
+use day18;
+  create table customers(
+      id int primary key,
+      name varchar(100),
+      city varchar(100)
+  );
+  create table orders(
+      id int primary key,
+      num varchar(100),
+      price float(10,2),
+      customer_id int,
+      constraint customer_id_fk foreign key(customer_id) references customers(id)
+  );
